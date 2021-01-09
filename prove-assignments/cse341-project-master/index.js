@@ -19,6 +19,10 @@ const PORT = process.env.PORT || 5000 // So we can run on heroku || (OR) localho
 const app = express();
 
 // Route setup. You can implement more in the future!
+//Prove Activities
+const pr01Routes = require('./routes/prove01');
+
+// Team Activities
 const ta01Routes = require('./routes/ta01');
 const ta02Routes = require('./routes/ta02');
 const ta03Routes = require('./routes/ta03'); 
@@ -33,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')))
    //.engine('hbs', expressHbs({layoutsDir: 'views/layouts/', defaultLayout: 'main-layout', extname: 'hbs'})) // For handlebars
    //.set('view engine', 'hbs')
    .use(bodyParser({extended: false})) // For parsing the body of a POST
+   .use('/pr01', pr01Routes)
    .use('/ta01', ta01Routes)
    .use('/ta02', ta02Routes) 
    .use('/ta03', ta03Routes) 
