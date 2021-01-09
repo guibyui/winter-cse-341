@@ -14,15 +14,17 @@ router.get("/", (req, res, next) => {
 
 router.post("/submit", (req, res, next) => {
   //   console.log(req.body);
-  console.log(req.body.input1);
-  console.log(req.body.input2);
+  //   console.log(req.body.input1);
+  //   console.log(req.body.input2);
   res.render("pages/prove01/display", {
     title: "Prove Assignment 1",
     path: "/prove01", // For pug, EJS
     activeTA03: true, // For HBS
     contentCSS: true, // For HBS
     input1: req.body.input1,
-    input2: req.body.input2
+    input2: req.body.input2,
+    input3: req.body.input3,
+    input4: req.body.input4,
   });
 });
 
